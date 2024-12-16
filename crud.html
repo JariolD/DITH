@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Bootstrap 5 Framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+        }
+
+        .form-container {
+            margin-top: 30px;
+        }
+
+        .data-list {
+            margin-top: 20px;
+        }
+
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .list-group-item:hover {
+            background-color: #f1f1f1;
+        }
+
+        .btn-actions {
+            display: flex;
+            gap: 5px;
+        }
+
+        .btn-actions .btn {
+            font-size: 0.9rem;
+        }
+
+        .badge-status {
+            background-color: #6c757d;
+        }
+    </style>
+</head>
+<body class="bg-dark">
+    <header class="text-white p-3 border-bottom border-light">
+        <div class="row m-0">
+            <div class="col">
+                <i class="bi bi-asterisk"></i>
+                <span>Dither Clothing Store</span>
+            </div>
+            <div class="col">
+                <div>
+                    <ul class="list-unstyled d-flex justify-content-between">
+                        <li><a href="" class="text-decoration-none text-white">Home</a></li>
+                        <li><a href="" class="text-decoration-none text-white">Shop</a></li>
+                        <li><a href="" class="text-decoration-none text-white">Sale</a></li>
+                        <li><a href="" class="text-decoration-none text-white">Blog</a></li>
+                        <li><a href="" class="text-decoration-none text-white">Showcase</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex justify-content-end">
+                    <!-- Cart Icon Button -->
+                    <button class="btn rounded-circle border-white mx-2">
+                        <i class="bi bi-bag text-white"></i>
+                    </button>
+                    <!-- Back Button -->
+                    <button class="btn btn-outline-light rounded-pill mx-2">
+                        Back
+                    </button>
+                    <!-- Log Out Button -->
+                    <button class="btn btn-light rounded-pill mx-2">
+                        Log Out
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Container for Update Order Section -->
+    <div class="container text-dark border border-light position-absolute top-50 start-50 translate-middle bg-light p-4 rounded">
+        <h3 class="text-center mb-4">Update Order</h3>
+
+        <!-- Data List (List of Orders) -->
+        <h4>Orders List</h4>
+        <ul id="dataList" class="data-list list-group list-group-flush list-unstyled">
+        </ul>
+
+        <!-- Hidden Update Form (Initially Hidden) -->
+        <div id="updateForm" class="form-container" style="display: none;">
+            <h4>Update User</h4>
+            <form id="updateOrderForm">
+                <div class="mb-3">
+                    <label for="updateFirstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="updateFirstName" placeholder="Enter First Name" required />
+                </div>
+                <div class="mb-3">
+                    <label for="updateLastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="updateLastName" placeholder="Enter Last Name" required />
+                </div>
+                <div class="mb-3">
+                    <label for="updateGmail" class="form-label">Gmail</label>
+                    <input type="email" class="form-control" id="updateGmail" placeholder="Enter Gmail" required />
+                </div>
+                <div class="mb-3">
+                    <label for="updatePassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="updatePassword" placeholder="Enter Password" required />
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary" onclick="saveUpdatedData(event)">Save</button>
+                    <button type="button" class="btn btn-secondary" onclick="cancelUpdate()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
